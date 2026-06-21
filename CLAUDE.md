@@ -169,6 +169,6 @@ Always respond in the user's language.
 
 <!-- DYNAMIC:START -->
 ## Current State
-Session: #1 (active) | Branch: main | Version: 1.5.6
-Tasks: 0/0 done, 0 active, 0 blocked
+Session: none | Branch: main | Version: 1.5.6
+Tasks: 1/1 done, 0 active, 0 blocked
 <!-- DYNAMIC:END -->
