@@ -99,14 +99,18 @@
     /* ─── MOBILE ─── */
     @media (max-width: 768px) {
       .hero { padding: 32px 20px 24px; }
-      .hero-inner { flex-direction: column; gap: 0; min-height: auto; align-items: stretch; }
-      .hero-text { padding-right: 0; order: 2; }
-      .hero-img { width: 72%; align-self: center; order: 1; margin-bottom: 16px; }
-      .hero-img img { max-height: 260px; }
-      .hero h1 { font-size: 24px; }
-      .hero-sub { font-size: 15px; margin-bottom: 16px; }
-      .hero-body { font-size: 14px; margin-bottom: 24px; max-width: 100%; }
-      .btn-pink { font-size: 13px; padding: 14px 32px; }
+      /* display:contents делает .hero-text прозрачным — его дети становятся прямыми flex-элементами .hero-inner */
+      .hero-inner { display: flex; flex-direction: column; gap: 0; min-height: auto; align-items: stretch; }
+      .hero-text { display: contents; }
+      .hero-text-top { order: 1; text-align: center; padding: 0 0 4px; }
+      .hero-img { order: 2; width: 86%; align-self: center; margin: 16px auto; }
+      .hero-img img { max-height: 360px; width: 100%; object-fit: contain; }
+      .hero-text-bottom { order: 3; text-align: center; }
+      .hero h1 { font-size: 22px; }
+      .hero-sub { font-size: 15px; margin-bottom: 0; }
+      .hero-body { font-size: 14px; margin-bottom: 20px; max-width: 100%; color: #555; }
+      .btn-pink { display: block; width: 100%; text-align: center; font-size: 14px; padding: 16px 24px; box-sizing: border-box; }
+      .hero-note { margin-top: 10px; }
 
       .section { padding: 40px 20px; }
       .about-title { font-size: 20px; }
@@ -138,11 +142,15 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <h1>Приведите тело в форму с чемпионкой Катей Усмановой</h1>
-      <p class="hero-sub">без диет, голода и запретов<br>с пользой для здоровья</p>
-      <p class="hero-body">Похудеть, подтянуть попу и живот, набрать форму в зале, восстановиться после родов — тренировки и питание под вашу цель</p>
-      <a href="#programs" class="btn-pink">Выбрать программу</a>
-      <p class="hero-note">Для корректной работы сайта отключите VPN</p>
+      <div class="hero-text-top">
+        <h1>Приведите тело в форму с чемпионкой Катей Усмановой</h1>
+        <p class="hero-sub">без диет, голода и запретов<br>с пользой для здоровья</p>
+      </div>
+      <div class="hero-text-bottom">
+        <p class="hero-body">Похудеть, подтянуть попу и живот, набрать форму в зале, восстановиться после родов — тренировки и питание под вашу цель</p>
+        <a href="#programs" class="btn-pink">Выбрать программу</a>
+        <p class="hero-note">Для корректной работы сайта отключите VPN</p>
+      </div>
     </div>
     <div class="hero-img">
       <img src="uploads/%D1%85%D0%B8%D1%80%D0%BE%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9.png" alt="Катя Усманова">
