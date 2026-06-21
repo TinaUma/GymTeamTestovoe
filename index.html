@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фитнес с Катей Усмановой — похудение, фигура, форма после родов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', Roboto, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #1a1a1a; background: #fff; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+
+    /* ─── HERO ─── */
+    .hero { background: #fff; padding: 56px 80px; }
+    .hero-inner { max-width: 1200px; width: 100%; margin: 0 auto; display: flex; align-items: center; gap: 0; min-height: 520px; }
+    .hero-text { flex: 1; min-width: 0; padding-right: 32px; }
+    .hero h1 { font-size: 44px; font-weight: 500; color: #E8559A; line-height: 1.1; text-transform: uppercase; letter-spacing: -.005em; margin-bottom: 20px; }
+    .hero-sub { font-size: 18px; font-weight: 300; color: #E8559A; margin-bottom: 28px; line-height: 1.55; }
+    .hero-body { font-size: 16px; font-weight: 400; color: #1a1a1a; line-height: 1.7; margin-bottom: 36px; max-width: 460px; }
+    .hero-img { flex: none; width: 46%; display: flex; justify-content: center; align-items: flex-end; }
+    .hero-img img { width: 100%; max-height: 82vh; object-fit: contain; object-position: bottom center; }
+
+    /* ─── BUTTONS ─── */
+    .btn-pink {
+      display: inline-block; background: #E8559A; color: #fff;
+      font-family: inherit; font-size: 14px; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 16px 52px; border-radius: 100px; cursor: pointer; border: none;
+    }
+    .btn-pink:hover { background: #d4458b; }
+    .hero-note { font-size: 12px; font-weight: 300; color: #aaa; margin-top: 14px; }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 68px 80px; }
+    .section-inner { max-width: 720px; margin: 0 auto; }
+    .section-gray { background: #F5F5F5; }
+
+    /* ─── BLOCK 2: О КАТЕ ─── */
+    .about-title { font-size: 30px; font-weight: 400; color: #1a1a1a; text-align: center; line-height: 1.35; margin-bottom: 14px; }
+    .about-title span { color: #E8559A; }
+    .about-sub { font-size: 15px; font-weight: 400; color: #666; text-align: center; line-height: 1.7; margin-bottom: 28px; }
+
+    .bullets { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+    .bullet { display: flex; align-items: flex-start; gap: 12px; }
+    .bullet-icon { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; object-fit: contain; }
+    .bullet span { font-size: 14px; font-weight: 400; color: #E8559A; line-height: 1.55; }
+
+    /* ─── GALLERY ─── */
+    .gallery-card { background: #fff; border-radius: 20px; box-shadow: 0 2px 24px rgba(0,0,0,.09); padding: 20px; }
+    .gallery-scroll {
+      display: flex; gap: 12px;
+      overflow-x: auto; scrollbar-width: none;
+      padding-bottom: 4px;
+      cursor: grab; user-select: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .gallery-scroll::-webkit-scrollbar { display: none; }
+    .gallery-scroll.dragging { cursor: grabbing; }
+    .gallery-item { flex: none; width: 260px; height: 240px; border-radius: 14px; overflow: hidden; background: #ede8e2; flex-shrink: 0; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+    .gallery-track { width: 100%; height: 4px; background: #e8e8e8; border-radius: 2px; margin: 16px 0 10px; position: relative; }
+    .gallery-bar { position: absolute; left: 0; top: 0; height: 100%; border-radius: 2px; background: #E8559A; width: 30%; cursor: ew-resize; }
+    .gallery-hint { display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .gallery-hint span { font-size: 13px; font-weight: 400; color: #E8559A; }
+    .gallery-hint img { width: 18px; height: 18px; object-fit: contain; }
+
+    /* ─── PROGRAMS ─── */
+    .programs-title { font-size: 30px; font-weight: 500; color: #1a1a1a; text-align: center; margin-bottom: 28px; }
+    .program-list { display: flex; flex-direction: column; gap: 14px; }
+    .program-card {
+      background: #fff; border-radius: 20px; overflow: hidden;
+      display: flex; align-items: stretch;
+      border: 2px solid transparent;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+      min-height: 180px;
+    }
+    .program-card.flagman { border-color: #E8559A; }
+    .program-img { flex: none; width: 42%; overflow: hidden; background: #fff; }
+    .program-img img { width: 100%; height: 100%; object-fit: contain; object-position: bottom center; display: block; }
+    .program-body { flex: 1; padding: 20px 20px 20px 16px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+    .program-tag { display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 8px; }
+    .tag-flagman { background: rgba(232,85,154,.12); color: #E8559A; }
+    .tag-plain { background: transparent; color: #E8559A; padding-left: 0; }
+    .program-name { font-size: 18px; font-weight: 500; color: #1a1a1a; line-height: 1.25; margin-bottom: 4px; }
+    .program-desc { font-size: 13px; font-weight: 400; color: #555; line-height: 1.6; }
+    .btn-pink-sm {
+      display: inline-block; background: #E8559A; color: #fff;
+      font-family: inherit; font-size: 13px; font-weight: 600;
+      padding: 10px 24px; border-radius: 100px;
+      margin-top: 10px; cursor: pointer; border: none;
+      align-self: flex-start;
+    }
+    .btn-pink-sm:hover { background: #d4458b; }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      .hero { padding: 32px 20px 24px; }
+      .hero-inner { flex-direction: column; gap: 0; min-height: auto; align-items: stretch; }
+      .hero-text { padding-right: 0; order: 2; }
+      .hero-img { width: 72%; align-self: center; order: 1; margin-bottom: 16px; }
+      .hero-img img { max-height: 260px; }
+      .hero h1 { font-size: 24px; }
+      .hero-sub { font-size: 15px; margin-bottom: 16px; }
+      .hero-body { font-size: 14px; margin-bottom: 24px; max-width: 100%; }
+      .btn-pink { font-size: 13px; padding: 14px 32px; }
+
+      .section { padding: 40px 20px; }
+      .about-title { font-size: 20px; }
+      .about-sub { font-size: 13px; }
+      .bullet span { font-size: 13px; }
+      .gallery-item { width: 200px; height: 185px; }
+
+      .programs-title { font-size: 20px; }
+      .program-card { min-height: 140px; }
+      .program-img { width: 40%; }
+      .program-body { padding: 12px 12px 12px 10px; }
+      .program-name { font-size: 13px; margin-bottom: 6px; }
+      .program-desc { font-size: 12px; }
+      .btn-pink-sm { font-size: 12px; padding: 8px 18px; margin-top: 10px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 20px; }
+      .hero-img { width: 82%; }
+      .about-title { font-size: 17px; }
+      .gallery-item { width: 170px; height: 158px; }
+      .program-name { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════ SECTION 1 — HERO ════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Приведите тело в форму с чемпионкой Катей Усмановой</h1>
+      <p class="hero-sub">без диет, голода и запретов<br>с пользой для здоровья</p>
+      <p class="hero-body">Похудеть, подтянуть попу и живот, набрать форму в зале, восстановиться после родов — тренировки и питание под вашу цель</p>
+      <a href="#programs" class="btn-pink">Выбрать программу</a>
+      <p class="hero-note">Для корректной работы сайта отключите VPN</p>
+    </div>
+    <div class="hero-img">
+      <img src="uploads/%D1%85%D0%B8%D1%80%D0%BE%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9.png" alt="Катя Усманова">
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ SECTION 2 — О КАТЕ ════════════ -->
+<section class="section section-gray">
+  <div class="section-inner">
+    <h2 class="about-title">Доверьте свое тело чемпионке фитнес-бикини и тренеру <span>Кате Усмановой</span></h2>
+    <p class="about-sub">С 2015 года создаёт топовые тренировки для идеальных ягодиц,<br>плоского живота и стройности без жёстких диет.<br>Уже более 580&nbsp;000+ участниц тренируются с Катей, ведь она:</p>
+
+    <div class="bullets">
+      <div class="bullet">
+        <img class="bullet-icon" src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/304/h/b9c77eb09cdae6dee48606d88134a74c.png" alt="">
+        <span>Вице-чемпионка мира и чемпионка России по фитнес-бикини</span>
+      </div>
+      <div class="bullet">
+        <img class="bullet-icon" src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/304/h/b9c77eb09cdae6dee48606d88134a74c.png" alt="">
+        <span>Профессиональный фитнес-тренер с опытом более 15 лет</span>
+      </div>
+      <div class="bullet">
+        <img class="bullet-icon" src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/304/h/b9c77eb09cdae6dee48606d88134a74c.png" alt="">
+        <span>Мама 2-х детей. Всего за 100 дней после первых родов похудела на 20 кг и вернулась в прежнюю форму</span>
+      </div>
+      <div class="bullet">
+        <img class="bullet-icon" src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/304/h/b9c77eb09cdae6dee48606d88134a74c.png" alt="">
+        <span>Автор первых в России масштабных марафонов стройности</span>
+      </div>
+      <div class="bullet">
+        <img class="bullet-icon" src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/304/h/b9c77eb09cdae6dee48606d88134a74c.png" alt="">
+        <span>Чемпионка России и мира по жиму лёжа</span>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <div class="gallery-scroll" id="galleryScroll">
+        <div class="gallery-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/220/h/c79ef9787c5e268d93a54f1e02e46ec3.png" alt=""></div>
+        <div class="gallery-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/284/h/1383cc163d1d98ed9a0bc68d4a2ffc03.png" alt=""></div>
+        <div class="gallery-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/464/h/fc6a33bedad095fcceb9b228a0e26ba1.png" alt=""></div>
+        <div class="gallery-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/484/h/52d50659565480b991c629cf6453df15.png" alt=""></div>
+        <div class="gallery-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/361/h/4b1c3f214dc7c40c17af48103ddcbdeb.png" alt=""></div>
+        <div class="gallery-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/250/h/fde40eec42d735ce23b758f6b8282d08.png" alt=""></div>
+        <div class="gallery-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/327/h/d4d3841aca9fb0bd2b9666c23d217cfa.png" alt=""></div>
+        <div class="gallery-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/492/h/8a1d46cc0fd29eca5de6eee284ff79ab.png" alt=""></div>
+        <div class="gallery-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/345/h/ad4b02d76a6edaa89ff9eb93052b54e9.png" alt=""></div>
+      </div>
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-bar" id="galleryBar"></div>
+      </div>
+      <div class="gallery-hint">
+        <span>Листайте вправо</span>
+        <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/295/h/3e5dd3a1d566a7f5fc0745fff3f0158c.png" alt="→">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ SECTION 3 — ПРОГРАММЫ ════════════ -->
+<section class="section section-gray" id="programs">
+  <div class="section-inner">
+    <h2 class="programs-title">Тренировки дома</h2>
+    <div class="program-list">
+
+      <div class="program-card flagman">
+        <div class="program-img"><img src="uploads/%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%20%D1%83%D1%81%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2%D0%BE%D0%B9.png" alt="Метод Усмановой"></div>
+        <div class="program-body">
+          <div>
+            <span class="program-tag tag-flagman">ФЛАГМАН</span>
+            <div class="program-name">Метод Усмановой</div>
+            <div class="program-desc">Освоите технику и втянетесь в регулярные тренировки — без травм и через силу. Первая программа, с которой начинают все ученицы Кати.</div>
+          </div>
+          <a href="https://usmanovafit.gymteam.ru/maysale2026_7" target="_blank" class="btn-pink-sm">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <div class="program-img"><img src="uploads/%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%BD%D0%BE%D1%81%D1%82%D0%B8.png" alt="Стройности"></div>
+        <div class="program-body">
+          <div>
+            <span class="program-tag tag-plain">Марафон</span>
+            <div class="program-name">Стройности</div>
+            <div class="program-desc">Первый видимый результат за 21 день — уходит первый жир, появляется тонус и лёгкость. Для тех, кто стартует с нуля.</div>
+          </div>
+          <a href="https://usmanovafit.gymteam.ru/maysale2026_7" target="_blank" class="btn-pink-sm">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <div class="program-img"><img src="uploads/%D1%83%D0%BF%D1%80%D1%83%D0%B3%D0%B0%D1%8F%20%D0%BF%D0%BE%D0%BF%D0%B0.png" alt="Упругая попа 1.0"></div>
+        <div class="program-body">
+          <div>
+            <span class="program-tag tag-plain">Марафон</span>
+            <div class="program-name">Упругая попа 1.0</div>
+            <div class="program-desc">Первый объём и подтянутость ягодиц — с собственным весом. Для тех, кто впервые целенаправленно работает над попой.</div>
+          </div>
+          <a href="https://usmanovafit.gymteam.ru/maysale2026_7" target="_blank" class="btn-pink-sm">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <div class="program-img"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/115/h/24010713a536c083b2ec7afd7c1d1a14.png" alt="Упругая попа 2.0"></div>
+        <div class="program-body">
+          <div>
+            <span class="program-tag tag-plain">Марафон</span>
+            <div class="program-name">Упругая попа 2.0</div>
+            <div class="program-desc">Плотные, упругие ягодицы — следующий уровень после 1.0. С резинкой и утяжелителями, для подготовленных.</div>
+          </div>
+          <a href="https://usmanovafit.gymteam.ru/maysale2026_7" target="_blank" class="btn-pink-sm">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <div class="program-img"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/315/h/48ec0a51911ca164eb3b4030fefefbe0.png" alt="Плоский живот"></div>
+        <div class="program-body">
+          <div>
+            <span class="program-tag tag-plain">Марафон</span>
+            <div class="program-name">Плоский живот</div>
+            <div class="program-desc">Убрать вываливающийся живот, который не уходит даже после похудения. Тренировки на глубокие мышцы пресса, которые отвечают за плоский живот — а не за «кубики».</div>
+          </div>
+          <a href="https://usmanovafit.gymteam.ru/maysale2026_7" target="_blank" class="btn-pink-sm">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <div class="program-img"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/51/h/15de2ca75857102388943fbc5e22e541.png" alt="Жиросжигающий"></div>
+        <div class="program-body">
+          <div>
+            <span class="program-tag tag-plain">Курс</span>
+            <div class="program-name">Жиросжигающий</div>
+            <div class="program-desc">Сжечь жир и проявить рельеф — за 6 недель. Для тех, кто уже тренировался: с гантелями, по схеме интервальных нагрузок.</div>
+          </div>
+          <a href="https://usmanovafit.gymteam.ru/maysale2026_7" target="_blank" class="btn-pink-sm">Подробнее</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const scroll = document.getElementById('galleryScroll');
+  const track  = document.getElementById('galleryTrack');
+  const bar    = document.getElementById('galleryBar');
+
+  // ── Размер бара пропорционален видимой части ──
+  function initBar() {
+    const ratio = Math.min(scroll.clientWidth / scroll.scrollWidth, 1);
+    bar.style.width = Math.max(ratio * 100, 10) + '%';
+    updateBar();
+  }
+
+  // ── Позиция бара следует за скроллом ──
+  function updateBar() {
+    const maxScroll  = scroll.scrollWidth - scroll.clientWidth;
+    const maxBarLeft = track.clientWidth - bar.clientWidth;
+    bar.style.left = maxScroll > 0
+      ? (scroll.scrollLeft / maxScroll * maxBarLeft) + 'px'
+      : '0px';
+  }
+
+  scroll.addEventListener('scroll', updateBar, { passive: true });
+  window.addEventListener('resize', initBar);
+  window.addEventListener('load', initBar);
+  initBar();
+
+  // ── Тяни РОЗОВЫЙ БАР — скроллится галерея ──
+  let barDrag = false, barX0 = 0, barScroll0 = 0;
+
+  bar.addEventListener('mousedown', e => {
+    barDrag = true;
+    barX0 = e.clientX;
+    barScroll0 = scroll.scrollLeft;
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+    e.stopPropagation();
+  });
+  document.addEventListener('mouseup', () => {
+    barDrag = false;
+    document.body.style.userSelect = '';
+  });
+  document.addEventListener('mousemove', e => {
+    if (!barDrag) return;
+    const maxBarLeft = track.clientWidth - bar.clientWidth;
+    const maxScroll  = scroll.scrollWidth - scroll.clientWidth;
+    if (maxBarLeft > 0) {
+      scroll.scrollLeft = barScroll0 + (e.clientX - barX0) / maxBarLeft * maxScroll;
+    }
+  });
+
+  // ── Тяни ФОТО руками (мышь) ──
+  let drag = false, x0 = 0, sl0 = 0;
+  scroll.addEventListener('mousedown', e => {
+    drag = true; x0 = e.clientX; sl0 = scroll.scrollLeft;
+    scroll.classList.add('dragging');
+    e.preventDefault();
+  });
+  document.addEventListener('mouseup', () => { drag = false; scroll.classList.remove('dragging'); });
+  document.addEventListener('mousemove', e => {
+    if (!drag || barDrag) return;
+    scroll.scrollLeft = sl0 - (e.clientX - x0) * 1.5;
+  });
+</script>
+
+</body>
+</html>
